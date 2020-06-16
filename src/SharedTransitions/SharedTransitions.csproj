@@ -43,6 +43,8 @@ A shared element transition determines how elements that are present in two page
 
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- cf. https://github.com/dotnet/project-system/issues/2487 -->
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
 
   <PropertyGroup Label="Android DesignTimeBuild error workaround"> 
