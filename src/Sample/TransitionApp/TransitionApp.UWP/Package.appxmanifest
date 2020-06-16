@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TransitionApp2.UWP</DisplayName>
+    <DisplayName>TransitionApp.UWP</DisplayName>
     <PublisherDisplayName>51a7877c-9e64-41d8-876e-0561086d2f3d</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="TransitionApp2.UWP.App">
+      EntryPoint="TransitionApp.UWP.App">
       <uap:VisualElements
-        DisplayName="TransitionApp2.UWP"
+        DisplayName="TransitionApp.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="TransitionApp2.UWP"
+        Description="TransitionApp.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
