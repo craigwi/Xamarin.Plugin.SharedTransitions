@@ -18,7 +18,7 @@
                      sharedTransitions:Transition.Name="Box3"/>
 
             <pancakeView:PancakeView Padding="0" HeightRequest="140" BackgroundGradientStartColor="DodgerBlue" BackgroundGradientEndColor="Brown" 
-                                     CornerRadius="{OnPlatform Android=15 0 0 15, iOS=30}"
+                                     CornerRadius="{OnPlatform Android=15 0 0 15, iOS=30, UWP=0 15 15 0}"
                                      sharedTransitions:Transition.Name="pancake4">
 
             </pancakeView:PancakeView>

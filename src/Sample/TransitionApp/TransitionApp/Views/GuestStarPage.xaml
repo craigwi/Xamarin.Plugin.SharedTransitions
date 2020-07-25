@@ -8,7 +8,7 @@
 
 
             <yummy:PancakeView BackgroundColor="DodgerBlue"
-                               sharedTransitions:Transition.Name="camilla">
+                               sharedTransitions:Transition.Name="camillaBackground">
                 <StackLayout Spacing="20">
 
                     <Image Source="what_the_dog.jpg" Opacity="0" x:Name="Camilla" />

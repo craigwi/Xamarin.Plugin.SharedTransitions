@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace Plugin.SharedTransitions
@@ -23,6 +24,10 @@ namespace Plugin.SharedTransitions
         /// </summary>
         public static readonly BindableProperty TransitionSelectedGroupProperty =
             BindableProperty.CreateAttached("TransitionSelectedGroup", typeof(string), typeof(SharedTransitionNavigationPage), null);
+
+        // temp status holding the from map so that we can cancel unneeded transitions on UWP
+        internal static readonly BindableProperty TransitionFromMapProperty =
+            BindableProperty.CreateAttached("TransitionFromMap", typeof(IReadOnlyList<TransitionDetail>), typeof(SharedTransitionNavigationPage), null);
 
         /// <summary>
         /// The background animation associated with the current page in stack
@@ -58,9 +63,26 @@ namespace Plugin.SharedTransitions
 	        set => TransitionMap = value;
         }
 
-        public SharedTransitionNavigationPage() : base() => TransitionMap = new TransitionMapper();
+        public SharedTransitionNavigationPage() : base()
+        {
+            TransitionMap = new TransitionMapper();
+            this.SetupUWPEvents();
+        }
 
-        public SharedTransitionNavigationPage(Page root) : base(root) => TransitionMap = new TransitionMapper();
+        public SharedTransitionNavigationPage(Page root) : base(root)
+        {
+            TransitionMap = new TransitionMapper();
+            this.SetupUWPEvents();
+        }
+
+        private void SetupUWPEvents()
+        {
+#if WINDOWS_UWP
+            // System.Diagnostics.Debug.Assert(this.PushRequested == null);
+            // hook events to get page transitions
+            Platforms.UWP.NavigationTransition.SetupAnimationEvents(this);
+#endif
+        }
 
         /// <summary>
         /// Gets the transition selected group

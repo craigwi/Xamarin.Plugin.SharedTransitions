@@ -39,7 +39,7 @@
                    FontSize="30" FontAttributes="Bold" />
 
             <yummy:PancakeView BackgroundColor="DodgerBlue" CornerRadius="15" Padding="5,10" Elevation="4" Margin="20,15"
-                               sharedTransitions:Transition.Name="camilla">
+                               sharedTransitions:Transition.Name="camillaBackground">
                 <yummy:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{prism:NavigateTo 'GuestStarPage'}" />
                 </yummy:PancakeView.GestureRecognizers>
